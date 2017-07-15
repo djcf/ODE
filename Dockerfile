@@ -2,7 +2,7 @@ FROM python:3.4-slim
 WORKDIR /var/ode
 RUN apt-get update && apt-get -y --no-install-recommends install git make gcc build-essential && \
 	pip install --upgrade pip && \
-	git clone https://github.com/makinacorpus/ODE.git /var/ode && \
+	git clone https://github.com/djcf/ODE.git /var/ode && \
 	make develop && \
 	apt-get -y remove gcc git python3-dev build-essential && \ 
 	apt-get -y clean && \
