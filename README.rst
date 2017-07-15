@@ -7,6 +7,17 @@ ODE - Open Data Events
 .. image:: https://coveralls.io/repos/makinacorpus/ODE/badge.png?branch=master
     :target: https://coveralls.io/r/makinacorpus/ODE
 
+===========
+THIS VERSION
+===========
+What is the difference between this version and makinacorpus' upstream?
+
+* This version fixes a bug wherein a PostgreSQL server must be initialized and listening for event storage. In particular, the PostreSQL server is now replaced by an SQLite file which is faster and allows the server to be deployed with minimal administrative interaction.
+
+* This version bundles a Dockerfile for deployment using Docker.
+
+* This version fixes a bug wherein GET requests to /v1/sources/ fail unless an X-ODE-Provider-Id is provided. This bug occluded another bug where it was not possible to view all sources by sending a GET request to /v1/sources which made it impossible to retrieve all sources at once.
+
 
 ===========
 DEVELOPMENT

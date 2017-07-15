@@ -34,7 +34,7 @@ def run_migrations_offline():
 
     """
     url = config.get_section_option('app:main', "sqlalchemy.url")
-    context.configure(url=url)
+    context.configure(url=url, render_as_batch=True)
 
     with context.begin_transaction():
         context.run_migrations()

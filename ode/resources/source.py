@@ -24,6 +24,6 @@ class SourceResource(ResourceMixin):
     def put(self):
         return ResourceMixin.put(self)
 
-    @view(validators=[has_provider_id, validate_querystring])
+    @view(validators=[validate_querystring])
     def collection_get(self):
         return ResourceMixin.collection_get(self)
