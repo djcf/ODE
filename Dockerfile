@@ -1,6 +1,6 @@
 FROM python:3.4-slim
 WORKDIR /var/ode
-RUN apt-get update && apt-get -y --no-install-recommends install git make gcc build-essential && \
+RUN apt-get update && apt-get -y --no-install-recommends install git make gcc build-essential && mkdir /data && \
 	pip install --upgrade pip && \
 	git clone https://github.com/djcf/ODE.git /var/ode && \
 	make develop && \
@@ -13,3 +13,4 @@ CMD ["make", "serve"]
 HEALTHCHECK CMD curl --fail http://localhost:6543/ || exit 1
 EXPOSE "6543"
 USER ode
+VOLUME /data
